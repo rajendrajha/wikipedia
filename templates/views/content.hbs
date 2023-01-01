@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wikipedia</title>
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/1200px-Wikipedia-logo-v2.svg.png" type="image/x-icon">
+    <style>
+        body {
+    background-color: rgb(230, 230, 230);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 120px;
+    padding: 20px;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 500px;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    outline:none;
+}
+.search-box:focus{
+    border: 2px solid #8ab4f8;
+
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    footer ul {
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    footer li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- content here -->
+    <div class="container">
+        <img onclick="go()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/1200px-Wikipedia-logo-v2.svg.png" alt="Wikipedia logo" class="logo">
+          <input type="text" placeholder="Search Wikipedia" id="search" class="search-box">
+      </div>
+      <script>
+        function go() {
+  if (document.getElementById("search").value !== "") {
+    window.location.href = `wiki/${document.getElementById("search").value}`;
+  } else {
+    document.getElementById("search").placeholder ==
+      "Please enter your search here...";
+  }
+}
+
+      </script>
+</body>
+</html>
